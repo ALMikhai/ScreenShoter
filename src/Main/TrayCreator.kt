@@ -1,5 +1,6 @@
 package Main
 
+import Editor.EditorStage
 import java.awt.*
 import java.io.File
 
@@ -13,6 +14,9 @@ class TrayCreator {
             trayIcon.toolTip = "ScreenShot done"
             tray.add(trayIcon)
             trayIcon.displayMessage("ScreenShot done", "Screen path - $path", TrayIcon.MessageType.INFO)
+
+            val editorWindow = EditorStage(path) // EditWindow
+            editorWindow.showAndWait()
 
             trayIcon.addActionListener {
                 val imageFile = File(path)

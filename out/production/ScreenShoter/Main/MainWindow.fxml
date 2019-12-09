@@ -8,7 +8,7 @@
    <children>
       <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <Button mnemonicParsing="false" onAction="#ScreenShot" text="Button" BorderPane.alignment="CENTER" />
+            <Button mnemonicParsing="false" onAction="#screenShot" text="Button" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
