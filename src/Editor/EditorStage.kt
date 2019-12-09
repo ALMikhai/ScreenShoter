@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader
 import javafx.scene.Parent
 import javafx.scene.Scene
 import javafx.scene.canvas.Canvas
+import javafx.scene.control.ColorPicker
 import javafx.scene.image.Image
 import javafx.stage.Stage
 import java.io.File
@@ -18,10 +19,10 @@ class EditorStage(path : String) : Stage() {
 
             val localURL = File(path).toURI().toURL().toString()
             controller.image = Image(localURL)
-            controller.canvas = (mainScene.lookup("#MainCanvas") as Canvas)
-
+            controller.canvas = (mainScene.lookup("#Canvas") as Canvas)
+            controller.colorPicker = (mainScene.lookup("#ColorPicker") as ColorPicker)
             controller.init()
-
+x
             scene = Scene(mainScene)
         }
 }

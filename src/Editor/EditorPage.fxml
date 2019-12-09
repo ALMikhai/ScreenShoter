@@ -7,24 +7,15 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="930.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Editor.EditorPage">
    <children>
-      <Canvas id="MainCanvas" height="900.0" layoutX="23.0" layoutY="14.0" width="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
+      <ColorPicker id="ColorPicker" layoutX="148.0" onAction="#onColorChange" AnchorPane.leftAnchor="148.0" AnchorPane.topAnchor="0.0" />
+      <Canvas id="Canvas" height="900.0" layoutX="23.0" layoutY="14.0" width="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0" />
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Change pen color">
-                     <graphic>
-                        <ColorPicker id="MainColorPicker" />
-                     </graphic>
-                  </MenuItem>
             </items>
           </Menu>
         </menus>
