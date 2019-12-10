@@ -1,6 +1,6 @@
 package Editor
 
-import Main.ScreenShot
+import Main.TrayCreator
 import javafx.embed.swing.SwingFXUtils
 import javafx.event.EventHandler
 import javafx.scene.SnapshotParameters
@@ -14,6 +14,7 @@ import javafx.scene.input.MouseEvent
 import java.io.File
 import java.util.*
 import javax.imageio.ImageIO
+import javax.swing.filechooser.FileSystemView
 
 
 class EditorPage {
@@ -58,12 +59,18 @@ class EditorPage {
     }
 
     fun saveImage() {
-        val parameters = SnapshotParameters()
         val wi = WritableImage(canvas.width.toInt(), canvas.height.toInt())
         val snapshot: WritableImage = canvas.snapshot(SnapshotParameters(), wi)
 
-
-        val output = File("${ScreenShot.getHomeDir()}\\snapshot_${Date().time}.png")
+        val path = "${getHomeDir()}\\Snapshot_${Date().time}.png"
+        val output = File(path)
         ImageIO.write(SwingFXUtils.fromFXImage(snapshot, null), "png", output)
+
+        TrayCreator.createAndDisplayTray(path)
+    }
+
+    private fun getHomeDir() : File {
+        val fsv = FileSystemView.getFileSystemView()
+        return fsv.homeDirectory
     }
 }

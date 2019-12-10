@@ -1,8 +1,11 @@
 package Main
 
+import Editor.EditorStage
+
 class Controller {
     fun screenShot() {
         val path = ScreenShot.allWindowScreenShot()
-        TrayCreator.createAndDisplayTray(path)
+        val editorWindow = EditorStage(path) // EditWindow
+        editorWindow.showAndWait()
     }
 }

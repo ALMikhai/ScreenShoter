@@ -15,9 +15,6 @@ class TrayCreator {
             tray.add(trayIcon)
             trayIcon.displayMessage("ScreenShot done", "Screen path - $path", TrayIcon.MessageType.INFO)
 
-            val editorWindow = EditorStage(path) // EditWindow
-            editorWindow.showAndWait()
-
             trayIcon.addActionListener {
                 val imageFile = File(path)
                 if (imageFile.exists()) {
